@@ -379,6 +379,7 @@ class ElevenLabsTTSService(InterruptibleWordTTSService):
             self._started = False
         except Exception as e:
             logger.error(f"{self} error closing websocket: {e}")
+            self._websocket = None
 
     def _get_websocket(self):
         if self._websocket:
